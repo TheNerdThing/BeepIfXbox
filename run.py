@@ -19,7 +19,7 @@ class bot():
 		text =buyButton.text
 		print("-----Best Buy-----")						
 		print(text)
-		return text == "Sold Out"
+		return text != "Sold Out"
 		
 	def close(self):
 		self.driver.close()
@@ -30,7 +30,7 @@ class bot():
 		text = self.driver.find_element_by_xpath('//*[@id="viewport"]/div[5]/div/div[2]/div[3]/div[1]/div/div[1]/div/div[1]').text
 		print("-----Target------")
 		print(text)
-		return text == "Out of stock in stores near you"
+		return text != "Out of stock in stores near you"
 		
 	def checkGameStop(self):
 		self.driver.get('https://www.gamestop.com/accessories/xbox-series-x/products/xbox-series-x/11108371.html?condition=New')
@@ -38,12 +38,16 @@ class bot():
 		text = self.driver.find_element_by_xpath('//*[@id="primary-details"]/div[4]/div[10]/div[2]/div[1]/label/div/div[5]/span[2]').text
 		print( "------Game Stop-----")
 		print(text)
-		return text == "OUT OF STOCK"
+		return text != "OUT OF STOCK"
 		
 b = bot()
-BB =b.checkBestBuy()
-T = b.checkTarget()
-GS = b.checkGameStop()
-if not BB or not T or not GS :
-	winsound.Beep(1000,5000)
+BB = False 
+T = False
+GS = False
+while not (BB or T or GS):
+	BB =b.checkBestBuy()
+	T = b.checkTarget()
+	GS = b.checkGameStop()
+
+winsound.Beep(1000,5000)
 b.close()
