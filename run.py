@@ -72,12 +72,12 @@ BBP = False
 TP = False
 GSP = False
 while not (BBX or TX or GSX or BBP or TP or GSP):
-	# BBX =b.checkBestBuyXbox()
-	# TX = b.checkTargetXbox()
-	# GSX = b.checkGameStopXbox()
+	BBX =b.checkBestBuyXbox()
+	TX = b.checkTargetXbox()
+	GSX = b.checkGameStopXbox()
 	BBP =b.checkBestBuyXbox()
-	# TP  = b.checkTargetPS5()
-	# GSP = b.checkGameStopPS5()
+	TP  = b.checkTargetPS5()
+	GSP = b.checkGameStopPS5()
 
 winsound.Beep(500,500)
 b.close()
