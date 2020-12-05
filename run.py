@@ -92,12 +92,12 @@ GSP = False
 WMX = False
 WMP = False
 while not (BBX or TX or GSX or BBP or TP or GSP or WMX or WMP):
-	# BBX = b.checkBestBuyXbox()
-	# TX  = b.checkTargetXbox()
-	# GSX = b.checkGameStopXbox()
-	# BBP = b.checkBestBuyPS5()
-	# TP  = b.checkTargetPS5()
-	# GSP = b.checkGameStopPS5()
+	BBX = b.checkBestBuyXbox()
+	TX  = b.checkTargetXbox()
+	GSX = b.checkGameStopXbox()
+	BBP = b.checkBestBuyPS5()
+	TP  = b.checkTargetPS5()
+	GSP = b.checkGameStopPS5()
 	WMX = b.checkWallMartXbox()
 	WMP = b.checkWallMartPS5()
 	
